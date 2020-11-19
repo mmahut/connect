@@ -142,7 +142,13 @@ export default class TransactionComposer {
         const changeId = addresses.change.findIndex(a => a.transfers < 1);
         if (changeId < 0) return { type: 'error', error: 'CHANGE-ADDRESS-NOT-SET' };
         const changeAddress = addresses.change[changeId].address;
-        const inputAmounts = coinInfo.segwit || coinInfo.forkid !== null || coinInfo.network.consensusBranchId !== null;
+        // const inputAmounts = coinInfo.segwit || coinInfo.forkid !== null || coinInfo.network.consensusBranchId !== null;
+
+        const enhancement = {};
+        if (coinInfo.shortcut === 'DOGE') {
+            enhancement.baseFee = 100000000;
+            enhancement.dustOutputFee = 100000000;
+        }
 
         const result = buildTx({
             utxos: this.utxos,
@@ -150,12 +156,13 @@ export default class TransactionComposer {
             height: this.blockHeight,
             feeRate,
             segwit: coinInfo.segwit,
-            inputAmounts,
+            inputAmounts: true,
             basePath: account.address_n,
             network: coinInfo.network,
             changeId,
             changeAddress,
             dustThreshold: coinInfo.dustLimit,
+            ...enhancement,
         });
         // hd-wallet returns `max = -1` when sendMax is not requested
         // https://github.com/trezor/hd-wallet/blob/master/src/build-tx/coinselect.js#L101
