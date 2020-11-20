@@ -5613,10 +5613,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-hd-wallet@9.1.0-beta.2:
-  version "9.1.0-beta.2"
-  resolved "https://registry.yarnpkg.com/hd-wallet/-/hd-wallet-9.1.0-beta.2.tgz#ba6819c35d65ee06f2b63d86c4f14eb5b086788c"
-  integrity sha512-uyh8scR8J1yg7ceVfzo6e5SR92apkgOcOPbXS0UmjMEs7z+v/CadWTFo6XA1GEH8hjEOGAlQQPpaYWYpQjtkfg==
+hd-wallet@9.1.0-beta.3:
+  version "9.1.0-beta.3"
+  resolved "https://registry.yarnpkg.com/hd-wallet/-/hd-wallet-9.1.0-beta.3.tgz#ad4d5d23fe5ed1c64c8d948e65a42453fff80bba"
+  integrity sha512-qoE2YOMAfCoXmlqtaFJbuO86RVI+smSvYr7JGqcxYXTY5zbu/kfTlwbc6CauhmktfUfA0+dcSz9QzfuSY/JtZg==
   dependencies:
     "@trezor/utxo-lib" "0.1.1"
     bchaddrjs "^0.3.2"
