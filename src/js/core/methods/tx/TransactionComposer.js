@@ -147,6 +147,7 @@ export default class TransactionComposer {
         const enhancement = {};
         if (coinInfo.shortcut === 'DOGE') {
             enhancement.baseFee = 100000000;
+            enhancement.floorBaseRate = true;
             enhancement.dustOutputFee = 100000000;
         }
 
