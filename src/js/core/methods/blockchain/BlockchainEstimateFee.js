@@ -74,6 +74,7 @@ export default class BlockchainEstimateFee extends AbstractMethod {
             blockTime: coinInfo.blocktime,
             minFee: coinInfo.minFee,
             maxFee: coinInfo.maxFee,
+            dustLimit: coinInfo.dustLimit,
             levels: [],
         };
         if (request && request.feeLevels) {
